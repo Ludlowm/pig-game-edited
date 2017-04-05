@@ -17,7 +17,7 @@ output: x * 0 = 0
 User pushes hold button and roll total adds to an empty player total.
 Example:
 input: Button clicked x=roll total    y=player total
-output: x = y
+output: x += y
 
 When player total equals or exceeds 100, user is prompted that they have won.
 Example:
