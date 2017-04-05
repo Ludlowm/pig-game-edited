@@ -28,7 +28,8 @@ $(document).ready(function(){
     $("#output").text(sum);
     $("#hold").click(function() {
       $("#totalOutput").text(sum)
-    console.log(currentRoll);
+        rollArray = []
   });
+  console.log(currentRoll);
   });
 });
