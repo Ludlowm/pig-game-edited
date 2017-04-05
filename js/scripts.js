@@ -10,13 +10,24 @@ function diceRoll() {
 
 var rollArray = [];
 
+
+
+
+
+
+
 //User Interface Logic
 $(document).ready(function(){
   $("#roll").click(function() {
     var currentRoll = diceRoll();
     rollArray.push(currentRoll);
-    var roll = currentRoll ++
+    var sum = rollArray.reduce((a, b) => a + b, 0);
 
-    $("#output").append(rollArray)
+
+      var roll = currentRoll ++
+    $("#output").text(sum);
+    console.log(currentRoll);
+
+
   });
-  });
+});
