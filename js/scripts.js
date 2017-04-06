@@ -10,7 +10,7 @@ function diceRoll(currentRoll) {
 }
 
 
-var curSum;
+var sum;
 var currentPlayer = 0;
 var playerCount = 2;
 
@@ -37,18 +37,18 @@ $(document).ready(function(){
       else
         currentPlayer = 0;
     }
-    curSum = game.players[currentPlayer].rollArray.reduce((a, b) => a + b, 0);
+    sum = game.players[currentPlayer].rollArray.reduce((a, b) => a + b, 0);
 
-    $("#output").text(curSum);
+    $("#output").text(sum);
 
     console.log(currentRoll);
   });
 
   $("#hold").click(function() {
       if (game.players[currentPlayer].name == "(none-set)")
-        game.players[currentPlayer] = new player($("#user-input").val(), (game.players[currentPlayer].tot + curSum));
+        game.players[currentPlayer] = new player($("#user-input").val(), (game.players[currentPlayer].tot + sum));
       else
-        game.players[currentPlayer] = new player(game.players[currentPlayer].name, (game.players[currentPlayer].tot + curSum));
+        game.players[currentPlayer] = new player(game.players[currentPlayer].name, (game.players[currentPlayer].tot + sum));
 
       var outStr = "";
       for (i = 0; i < playerCount; i++){
@@ -65,8 +65,8 @@ $(document).ready(function(){
       else
         currentPlayer = 0;
       //currentPlayer++;
-      curSum = 0;
-      $("#output").text(curSum);
+      sum = 0;
+      $("#output").text(sum);
       game.players[currentPlayer].rollArray = [];
   });
 });
